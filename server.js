@@ -1,9 +1,13 @@
+require('dotenv').config();
+
 // Dependencies
 const express = require('express');
-const methodOverride = require('method-override');
-const mongoose = require('mongoose');
 const app = express();
+const mongoose = require('mongoose');
+
 const db = mongoose.connection;
+
+const methodOverride = require('method-override');
 
 // PORT
 const PORT = process.env.PORT || 3000;
@@ -12,11 +16,10 @@ const PORT = process.env.PORT || 3000;
 // How to connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI;
 
-require('dotenv').config();
+
 
 // Database configuration
 const DATABASE_URL = `mongodb+srv://admin:abc1234@cluster0.io6ho.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-
 
 // Database Connection
 mongoose.connect(DATABASE_URL, {
@@ -47,11 +50,15 @@ app.use(methodOverride('_method')); // allow POST, PUT and DELETE from a form
 
 // Routes
 //localhost:3000
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
-
-
+// INDEX
+app.get('/', (request, response) => {
+    response.render(
+        'index.ejs',
+        {
+           
+        }
+    );
+  });
 
 
 
