@@ -4,35 +4,27 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-
-const db = mongoose.connection;
+const Sunglass = require('./models/sunglasses');
 
 const methodOverride = require('method-override');
-
-// PORT
-const PORT = process.env.PORT || 3000;
-
-//Database
-// How to connect to the database either via heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI;
-
-
-
-// Database configuration
-const DATABASE_URL = `mongodb+srv://admin:abc1234@cluster0.io6ho.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+app.set('view engine', 'ejs');
 
 // Database Connection
-mongoose.connect(DATABASE_URL, {
+mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true,
 });
 
-// Database Connection Error/Success - optional but can be really helpful
+const db = mongoose.connection;
+// Database Connection Error/Success/Information
 db.on('error', (err) => console.log(err.message + ' is MongoDB not running?'));
 db.on('connected', () => console.log('MongoDB connected'));
 db.on('disconnected', () => console.log('MongoDB disconnected'));
+
+
+
 
 //Middleware
 //use public folder for static assets
@@ -40,28 +32,77 @@ app.use(express.static('public'));
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({
-    extended: false
-})); // extended: false - does not allow nested objects in query strings
-app.use(express.json()); // returns middleware that only parses JSON - may or may not need it depending on your project
+    extended: true
+}));
 
 //use method override
 app.use(methodOverride('_method')); // allow POST, PUT and DELETE from a form
 
+
+const seedData = require('./models/seedData.js');
+app.get('/sunglasses/seed', (req, res) => {
+    Sunglass.deleteMany({}, (error, allSunglasses) => {})
+    Sunglass.create(seedData, (error, data) => {
+        res.redirect('/sunglasses')
+    })
+})
+
+
+// INDEX
+// Index
+app.get('/sunglasses', (req, res) => {
+    Sunglass.find({}, (error, allSunglasses) => {
+        res.render('index.ejs', {
+            sunglasses: allSunglasses,
+        });
+    });
+});
+
+// Routes / Controllers
+// New
+app.get('/sunglasses/new', (req, res) => {
+    res.render('new.ejs');
+});
+
+
+// Create
+// Routes / Controllers
+app.post('/sunglasses', (req, res) => {
+    /*
+    if (req.body.completed === true) {
+        //if checked, req.body.completed is set to 'on'
+        req.body.completed = true;
+    } else {
+        //if not checked, req.body.completed is undefined
+        req.body.completed = false;
+    } */
+    Sunglass.create(req.body, (error, createdSunglass) => {
+        res.redirect('/sunglasses');
+    });
+});
 
 // Routes
 //localhost:3000
 // INDEX
 app.get('/', (request, response) => {
     response.render(
-        'index.ejs',
-        {
-           
+        'index.ejs', {
+            sunglass: allSunglasses,
         }
     );
-  });
+});
 
-
-
+// SHOW
+app.get('/sunglasses/:id', (req, res) => {
+    Sunglass.findById(req.params.id, (error, foundSunglass) => {
+        res.render('show.ejs', {
+            sunglass: foundSunglass
+        })
+    });
+});
 
 // App Listener
-app.listen(PORT, () => console.log(`express is listening on port: ${PORT}`));
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+    console.log(`The server is listening on port: ${PORT}`);
+});

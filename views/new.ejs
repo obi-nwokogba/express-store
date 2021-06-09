@@ -1,0 +1,22 @@
+<%- include('partials/header.ejs') %>
+<title>Sunglasses List</title>
+</head>
+
+<body>
+    <%- include('partials/navigationbar.ejs') %>
+
+    <h2>add new sunglasses</h2>
+
+    <div class="formcontainer">
+    <form action="/sunglasses" method="POST">
+        Model: <input type="text" name="model" /><br />
+        Description: <input type="text" name="description" /><br />
+        Price: <input type="text" name="price" /><br />
+        Image WWW URL: <input type="text" name="imgurl" /><br />
+        Quantity: <input type="text" name="quantity" /><br />
+        <input type="submit" name="" value="Add Pair" />
+    </form>
+</div>
+</body>
+
+</html>
