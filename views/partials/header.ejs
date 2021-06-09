@@ -17,13 +17,21 @@
             font-family: 'Bodoni Moda', serif;
             border-top: solid 7px #bd0074;
             background: rgb(255, 255, 255);
-            background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(228, 228, 228, 1) 53%, rgba(222, 222, 222, 1) 100%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(238, 238, 238, 1) 53%, rgba(232, 232, 232, 1) 100%);
         }
 
         h1.storeBrand {
+            color: rgb(129, 129, 129);
+            margin-top: 30px;
+            font-size: 2.7em;
+        }
+
+        h2 {
             color: rgb(149, 149, 149);
             margin-top: 30px;
-            font-size: 2.2em;
+            font-size: 2em;
+            font-weight: 400;
+            font-style: italic;
         }
 
         p {
@@ -50,8 +58,7 @@
 
         a:hover {
             color: black;
-            border-bottom: solid 2px #bd0074;
-            padding: 10px;
+            border-bottom: solid 6px #bd0074;
         }
 
         li {
@@ -68,6 +75,7 @@
 
         div.footercontainer {
             margin: 0 auto;
+            margin-top:50px;
             border-radius: 10px;
             border: solid 1px #33333348;
             display: block;
@@ -75,17 +83,18 @@
             font-size: 0.85em;
             color: #777777;
             border-top: solid 5px rgb(182, 182, 182);
-
         }
 
         img.productdisplay {
-            max-width: 300px;
+            max-width: 100%;
+        max-height: 100%;
+        display: block;
         }
 
         div.productimagecontainer {
-            max-width: 320px;
-
-
+            max-width: 340px;
+            max-height:200px;
+            overflow: hidden;
         }
 
         div.productcontainer {
@@ -94,13 +103,17 @@
             height: 300px;
             display: inline-block;
             margin: 25px;
+            text-align: left;
         }
 
         span.model {
             display: block;
             color: rgb(27, 27, 27);
-            font-size: 1.3em;
+            font-size: 1.4em;
             border-bottom: dotted 1px #333;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            
         }
 
         span.price {
