@@ -81,15 +81,29 @@ app.post('/sunglasses', (req, res) => {
     });
 });
 
-// Routes
-//localhost:3000
+// *** ROUTES *******
+
 // INDEX
-app.get('/', (request, response) => {
-    response.render(
-        'index.ejs', {
-            sunglass: allSunglasses,
-        }
-    );
+app.get('/sunglasses', (req, res) => {
+    Sunglass.find({}, (error, allSunglasses) => {
+        res.render('index.ejs', {
+            sunglasses: allSunglasses,
+        });
+    });
+});
+
+// HOME ROUTE
+app.get('/', (req, res) => {
+    Sunglass.find({}, (error, allSunglasses) => {
+        res.render('index.ejs', {
+            sunglasses: allSunglasses,
+        });
+    });
+});
+
+// NEW
+app.get('/sunglassess/new', (req, res) => {
+    res.render('new.ejs');
 });
 
 // SHOW
