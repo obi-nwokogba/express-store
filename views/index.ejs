@@ -8,14 +8,24 @@
     <h2>Welcome to the Home Page of Sunglasses Express</h2>
     <div>
         <% sunglasses.forEach(sunglass => { %>
-        
+            <div class="productcontainer">
+
             <div class="productimagecontainer">
             <img src="<%=sunglass.imgurl; %>" class="productdisplay" />
         </div>
-            <a href="/sunglasses/<%=sunglass._id; %>"> <%=sunglass.model; %> </a>
+
+        <span class="model">
+            <a href="/sunglasses/<%=sunglass._id; %>"> 
+                
+               
+                <%=sunglass.model; %></a> </span>
+
             <%=sunglass.description; %>
-            <span class="price"<%=sunglass.price; %>
-            <%=sunglass.quantity; %>left
+            <span class="price"> $<%=sunglass.price; %><br />
+            <small><%=sunglass.quantity; %> left</small>
+            
+        
+        </div>
         
         <% }) %>
     </div>

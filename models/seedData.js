@@ -1,27 +1,27 @@
 module.exports = [{
-        model: 'Rayban XX7',
-        description: 'Goodr',
+        model: 'Goodr XX7',
+        description: 'Black Plastic Frames',
         price: '70',
         imgurl: 'https://i.imgur.com/Hz7812B.jpg',
         quantity: '6'
     },
     {
         model: 'Gucci Fraternity 2',
-        description: 'Jon Duckett',
+        description: 'Orange and Pink Hues for You',
         price: '70',
         imgurl: 'https://i.imgur.com/2GAD4hB.jpg',
         quantity: '456'
     },
     {
         model: 'Santa Monica Ira 7',
-        description: 'jon Duckett',
+        description: 'Dark Azure Blue Shades',
         price: '70',
         imgurl: 'https://i.imgur.com/HTDS7zQ.jpg',
         quantity: '87'
     },
     {
         model: "Quay Series 2",
-        description: 'Kyle Simpson',
+        description: 'Elegant Titanium Frames',
         price: '70',
         imgurl: 'https://i.imgur.com/ZX9cAHM.jpg',
         quantity: '34'
