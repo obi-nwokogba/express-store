@@ -6,14 +6,23 @@
     <%- include('partials/navigationbar.ejs') %>
 
     <h2>Welcome to the Home Page of Sunglasses Express</h2>
-    <ul>
+    <div>
         <% sunglasses.forEach(sunglass => { %>
-        <li>
+        
+            <div class="productimagecontainer">
+            <img src="<%=sunglass.imgurl; %>" class="productdisplay" />
+        </div>
             <a href="/sunglasses/<%=sunglass._id; %>"> <%=sunglass.model; %> </a>
-        </li>
+            <%=sunglass.description; %>
+            <span class="price"<%=sunglass.price; %>
+            <%=sunglass.quantity; %>left
+        
         <% }) %>
-    </ul>
+    </div>
 
+
+
+    <%- include('partials/footer.ejs') %>
 </body>
 
 </html>
