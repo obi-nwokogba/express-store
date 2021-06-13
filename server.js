@@ -23,9 +23,6 @@ db.on('error', (err) => console.log(err.message + ' is MongoDB not running?'));
 db.on('connected', () => console.log('MongoDB connected'));
 db.on('disconnected', () => console.log('MongoDB disconnected'));
 
-
-
-
 //Middleware
 //use public folder for static assets
 app.use(express.static('public'));
@@ -37,7 +34,6 @@ app.use(express.urlencoded({
 
 //use method override
 app.use(methodOverride('_method')); // allow POST, PUT and DELETE from a form
-
 
 const seedData = require('./models/seedData.js');
 app.get('/sunglasses/seed', (req, res) => {
@@ -82,7 +78,6 @@ app.post('/sunglasses', (req, res) => {
 });
 
 // *** ROUTES *******
-
 // INDEX
 app.get('/sunglasses', (req, res) => {
     Sunglass.find({}, (error, allSunglasses) => {
@@ -104,6 +99,15 @@ app.get('/', (req, res) => {
 // NEW
 app.get('/sunglassess/new', (req, res) => {
     res.render('new.ejs');
+});
+
+// Update
+app.put('/sunglasses/:id', (req, res) => {
+    Sunglass.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+    }, (error, updatedSunglass) => {
+        res.redirect(`/sunglasses/${req.params.id}`);
+    });
 });
 
 // SHOW
