@@ -7,6 +7,28 @@ body {
     background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(238, 238, 238, 1) 53%, rgba(232, 232, 232, 1) 100%);
 }
 
+div.toppolkadotsdiv {
+    background: url('../img/polka245584.png');
+    display: block;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    min-height: 60px;
+}
+
+div.footercontainer {
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 0px;
+    display: block;
+    padding: 30px;
+    padding-bottom: 55px;
+    font-size: 0.85em;
+    color: #777777;
+    border-top: solid 20px #DEDEDE;
+    background: url('../img/polka245584.png');
+    text-align: center;
+}
+
 h1.storeBrand {
     color: rgb(129, 129, 129);
     margin-top: 30px;
@@ -61,17 +83,7 @@ div.formcontainer {
     padding: 20px;
 }
 
-div.footercontainer {
-    margin: 0 auto;
-    margin-top: 50px;
-    border-radius: 10px;
-    border: solid 1px #33333348;
-    display: block;
-    padding: 30px;
-    font-size: 0.85em;
-    color: #777777;
-    border-top: solid 5px rgb(182, 182, 182);
-}
+
 
 img.productdisplay {
     max-width: 100%;
@@ -108,4 +120,9 @@ span.price {
     display: block;
     color: rgb(80, 80, 80);
     font-size: 1.6em;
+}
+
+.topsvglogo {
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
