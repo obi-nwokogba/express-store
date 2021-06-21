@@ -126,12 +126,25 @@ app.delete('/sunglasses/:id', (req, res) => {
 // =======================================
 // UPDATE ROUTE
 // =======================================
-app.put('/sunglasses/:id', (req, res) => {
+app.put('/sunglasses/:id/edit', (req, res) => {
     Sunglass.findByIdAndUpdate(req.params.id, req.body, {
         new: true
     }, (error, updatedSunglass) => {
         res.redirect(`/sunglasses/${req.params.id}`);
     });
+});
+
+
+
+// =======================================
+// EDIT ROUTE
+// =======================================
+app.get('/sunglass/:id/edit', (req, res) => {
+	Sunglass.findById(req.params.id, (error, foundSunglass) => {
+		res.render('edit.ejs', {
+			sunglass: foundSunglass
+		});
+	});
 });
 
 // =======================================

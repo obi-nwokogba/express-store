@@ -24,28 +24,28 @@ module.exports = [{
         description: 'Elegant Titanium Frames',
         price: '70',
         imgurl: 'https://i.imgur.com/ZX9cAHM.jpg',
-        quantity: '34'
+        quantity: '34',
     },
     {
         model: 'Neo Matrix Black',
         description: 'Stainless steel shiny frames',
         price: '70',
-        imgurl: 'https://i.imgur.com/JuDYgSc.jpg',
-        quantity: '14'
+        imgurl: 'https://i.imgur.com/hzn4Dm3.jpg',
+        quantity: '14',
     },
     {
         model: 'Morpheus BluePill',
         description: 'SciFi Inspired Lunettes',
         price: '70',
         imgurl: 'https://i.imgur.com/R0vpILw.jpg',
-        quantity: '33'
+        quantity: '33',
     },
     {
         model: "Nautica Aerodynamics",
         desription: 'These slick shades wont fall off',
         price: '70',
         imgurl: 'https://i.imgur.com/dTdMb6G.jpg',
-        quantity: '87'
+        quantity: '87',
     },
     {
         model: "Santa Monica Landscapers 5",
@@ -59,7 +59,7 @@ module.exports = [{
         desription: 'Look like Neo in the Matrix',
         price: '70',
         imgurl: 'https://i.imgur.com/FgXdw0M.jpg',
-        quantity: '65'
+        quantity: '65',
     },
     {
         model: "Rayban Hacker",
@@ -73,13 +73,13 @@ module.exports = [{
         desription: 'Best bought in pairs for lovebirds',
         price: '70',
         imgurl: 'https://i.imgur.com/j5BpeKP.jpg',
-        quantity: '17'
+        quantity: '17',
     },
     {
         model: "MontBlanc Mongoose",
         desription: 'Steve Krug',
         price: '70',
         imgurl: 'https://i.imgur.com/BYOWARW.jpg',
-        quantity: '33'
+        quantity: '33',
     },
 ];

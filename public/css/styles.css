@@ -2,7 +2,7 @@ body {
     margin: 0px;
     text-align: center;
     font-family: 'Bodoni Moda', serif;
-    border-top: solid 7px #bd0074;
+    border-top: solid 7px #F62A71;
     background: rgb(255, 255, 255);
     background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(238, 238, 238, 1) 53%, rgba(232, 232, 232, 1) 100%);
 }
@@ -59,7 +59,7 @@ p {
 }
 
 a {
-    color: #bd0074;
+    color: #F62A71;
     text-decoration: none;
     border-bottom: solid 3px rgba(151, 151, 151, 0.459);
     padding: 6px;
@@ -68,7 +68,7 @@ a {
 
 a:hover {
     color: black;
-    border-bottom: solid 6px #bd0074;
+    border-bottom: solid 6px #F62A71;
 }
 
 li {
@@ -81,9 +81,31 @@ div.formcontainer {
     border: solid 1px #33333348;
     width: 500px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* align-items:baseline; */
 }
 
+label {
+    margin: 0 auto;
+    display: block;
+}
 
+input.formfield{
+    border-bottom:solid 2px #f62a71;
+    border-width:0px 0px 2px 0px;
+    padding:10px;
+    font-size:1.1em
+}
+
+span.formlabel {
+    width: 200px;
+    min-width:200px;
+    max-width:200px;
+    margin-top:35px;
+}
 
 img.productdisplay {
     max-width: 100%;
@@ -104,25 +126,76 @@ div.productcontainer {
     display: inline-block;
     margin: 25px;
     text-align: left;
+    transition: 0.3s;
 }
 
 span.model {
     display: block;
     color: rgb(27, 27, 27);
     font-size: 1.4em;
-    border-bottom: dotted 1px #333;
-    padding-bottom: 5px;
+    border-bottom: solid 2px #F62871;
+    padding-bottom: 7px;
     margin-bottom: 10px;
-
 }
 
 span.price {
     display: block;
-    color: rgb(80, 80, 80);
-    font-size: 1.6em;
+    color: rgb(97, 97, 97);
+    font-size: 1.7em;
+    margin-bottom:8px;
 }
 
 .topsvglogo {
     margin-top: 50px;
     margin-bottom: 30px;
+}
+
+.button1{
+    background:#F62A71;
+    color:white;
+    padding:12px;
+    border:none;
+    margin:7px;
+}
+
+.button2{
+    background:#F62A71;
+    color:white;
+    padding:9px;
+    border:none;
+    margin:7px;
+    zoom:0.8;
+}
+
+.editbutton{
+    background:#F62A71;
+    color:white;
+    padding:9px;
+    border:none;
+    margin:7px;
+    zoom:0.8;
+}
+
+.deletebutton{
+    background-color:orangered;
+    font-size:0.7em;
+    border:none;
+    color:white;
+    padding:5px;
+    transition:0.3s;
+    font-family: 'Bodoni Moda', serif;
+}
+
+.deletebutton:hover{
+    padding-right:40px;
+    background-color:rgb(199, 0, 0);
+}
+
+.deleteform{
+    margin-top:10px;
+    opacity:0.5;
+}
+
+.deleteform:hover{
+opacity: 1;
 }

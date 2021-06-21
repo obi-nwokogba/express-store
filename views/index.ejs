@@ -1,5 +1,6 @@
 <%- include('partials/header.ejs') %>
-<title>Sunglasses Express - The Best Sunglasses Online - Express Delivery </title>
+
+<title> Sunglasses Express - The Best Sunglasses Online - Express Delivery </title>
 </head>
 
 <body>
@@ -20,18 +21,22 @@
                     <%=sunglass.model; %></a> </span>
 
             <%=sunglass.description; %>
-            <span class="price"> $<%=sunglass.price; %><br />
-                <small><%=sunglass.quantity; %> left</small>
 
-                <a href="">BUY</a>
+            <span class="price"> $<%=sunglass.price; %>
 
-                <form action="/sunglasses/<%=sunglass._id%>?_method=PUT" method="POST">
-                    <input type="submit" value="UPDATE" />
+                <br />
+
+                <a href="" class="button2">BUY</a>
+
+                <a href="/sunglasses/<%=sunglass._id%>/edit" class="editbutton">
+                    edit
+                </a>
+
+                <form action="/sunglasses/<%= sunglass.id %>?_method=DELETE" method="POST" class="deleteform">
+                    <input type="submit" value="delete" class="deletebutton" />
+                    <small>Only <%=sunglass.quantity; %> left</small>
                 </form>
 
-                <form action="/sunglasses/<%= sunglass.id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="DELETE" />
-                </form>
 
         </div>
 

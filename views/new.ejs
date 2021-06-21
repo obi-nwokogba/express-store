@@ -8,15 +8,26 @@
     <h2>add new sunglasses</h2>
 
     <div class="formcontainer">
-    <form action="/sunglasses" method="POST">
-        Model: <input type="text" name="model" /><br />
-        Description: <input type="text" name="description" /><br />
-        Price: <input type="text" name="price" /><br />
-        Image WWW URL: <input type="text" name="imgurl" /><br />
-        Quantity: <input type="text" name="quantity" /><br />
-        <input type="submit" name="" value="Add Pair" />
-    </form>
-</div>
+        <form action="/sunglasses" method="POST">
+            
+            <label>
+                <div class="formlabel">model</div>
+                <input type="text" name="model" class="formfield" />
+            </label>
+
+            <label>
+                <div class="formlabel">price</div>
+                <input type="text" name="price" class="formfield" />
+            </label>
+           
+            <label>
+                <div class="formlabel">Quantity:</div>
+                <input type="text" name="quantity" class="formfield"/>
+            </label>
+
+            <input type="submit" name="" value="Add Pair" class="button1"/>
+        </form>
+    </div>
 </body>
 
 </html>
