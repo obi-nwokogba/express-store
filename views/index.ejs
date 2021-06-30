@@ -25,17 +25,19 @@
             <span class="price"> $<%=sunglass.price; %>
 
                 <br />
+<div class="buttonsrow">
+                <a href="" class="button2">Buy</a>
 
-                <a href="" class="button2">BUY</a>
-
-                <a href="/sunglasses/<%=sunglass._id%>/edit" class="editbutton">
-                    edit
+                <a href="/sunglasses/<%=sunglass._id%>/edit" class="button2">
+                    Edit
                 </a>
 
                 <form action="/sunglasses/<%= sunglass.id %>?_method=DELETE" method="POST" class="deleteform">
-                    <input type="submit" value="delete" class="deletebutton" />
-                    <small>Only <%=sunglass.quantity; %> left</small>
+                    <input type="submit" value="Delete" class="button2 orange" />
+                    <span class="amountremaining"><%=sunglass.quantity; %> left</small>
                 </form>
+
+                </div>
 
 
         </div>

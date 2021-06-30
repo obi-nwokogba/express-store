@@ -2,20 +2,25 @@
 <title>Sunglasses Express - Shades will never Fade</title>
 </head>
 <body>
-    <%- include('/partials/navigationbar.ejs') %>
+    <%- include('./partials/navigationbar.ejs') %>
 
     <h2>UPDATE SHADES</h2>
 
     <div class="formcontainer">
-        <form action="/sunglasses" method="POST">
-            Model: <input type="text" name="model" /><br />
-            Description: <input type="text" name="description" /><br />
-            Price: <input type="text" name="price" /><br />
-            Image WWW URL: <input type="text" name="imgurl" /><br />
-            Quantity: <input type="text" name="quantity" /><br />
-            <input type="submit" name="" value="Add Pair" />
+        <form action="/sunglasses/<%= sunglass._id %>/edit?_method=PUT" method="POST">
+            Model: <input type="text" name="model" 
+            value="<%= sunglass.model %>" /><br />
+            Description: <input type="text" name="description" 
+            value="<%= sunglass.description %>"/><br />
+            Price: <input type="text" name="price" 
+            value="<%= sunglass.price %>"/><br />
+            Image WWW URL: <input type="text" name="imgurl" 
+            value="<%= sunglass.imgurl %>"/><br />
+            Quantity: <input type="text" name="quantity" 
+            value="<%= sunglass.quantity %>" /><br />
+            <input type="submit" name="submit" class="button2" 
+            value="Save Edit" />
         </form>
     </div>
 </body>
-
 </html>

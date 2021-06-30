@@ -36,9 +36,9 @@ h1.storeBrand {
 }
 
 h2 {
-    color: rgb(149, 149, 149);
+    color: rgb(165, 165, 165);
     margin-top: 30px;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 400;
     font-style: italic;
 }
@@ -93,18 +93,18 @@ label {
     display: block;
 }
 
-input.formfield{
-    border-bottom:solid 2px #f62a71;
-    border-width:0px 0px 2px 0px;
-    padding:10px;
-    font-size:1.1em
+input.formfield {
+    border-bottom: solid 2px #f62a71;
+    border-width: 0px 0px 2px 0px;
+    padding: 10px;
+    font-size: 1.1em
 }
 
 span.formlabel {
     width: 200px;
-    min-width:200px;
-    max-width:200px;
-    margin-top:35px;
+    min-width: 200px;
+    max-width: 200px;
+    margin-top: 35px;
 }
 
 img.productdisplay {
@@ -117,6 +117,7 @@ div.productimagecontainer {
     max-width: 340px;
     max-height: 200px;
     overflow: hidden;
+    margin-bottom: 40px;
 }
 
 div.productcontainer {
@@ -138,11 +139,22 @@ span.model {
     margin-bottom: 10px;
 }
 
+span.model2 {
+    display: block;
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 1.3em;
+    border-bottom: dotted 2px #c5c5c580;
+    padding-bottom: 7px;
+    margin-bottom: 10px;
+    text-align:left;
+    padding:7px;
+}
+
 span.price {
     display: block;
     color: rgb(97, 97, 97);
     font-size: 1.7em;
-    margin-bottom:8px;
+    margin-bottom: 8px;
 }
 
 .topsvglogo {
@@ -150,52 +162,123 @@ span.price {
     margin-bottom: 30px;
 }
 
-.button1{
-    background:#F62A71;
-    color:white;
-    padding:12px;
-    border:none;
-    margin:7px;
-}
-
-.button2{
-    background:#F62A71;
-    color:white;
-    padding:9px;
-    border:none;
-    margin:7px;
-    zoom:0.8;
-}
-
-.editbutton{
-    background:#F62A71;
-    color:white;
-    padding:9px;
-    border:none;
-    margin:7px;
-    zoom:0.8;
-}
-
-.deletebutton{
-    background-color:orangered;
-    font-size:0.7em;
-    border:none;
-    color:white;
-    padding:5px;
-    transition:0.3s;
+.button1 {
+    background: #F62A71;
+    font-size: 0.7em;
+    border: none;
+    color: white;
+    padding: 5px;
+    transition: 0.3s;
     font-family: 'Bodoni Moda', serif;
 }
 
-.deletebutton:hover{
-    padding-right:40px;
-    background-color:rgb(199, 0, 0);
+.button2 {
+    background: #F62A71;
+    color: white;
+    font-size: 0.7em;
+    border: none;
+    color: white;
+    padding: 5px;
+    transition: 0.3s;
+    font-family: 'Bodoni Moda', serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-height: 30px;
 }
 
-.deleteform{
-    margin-top:10px;
-    opacity:0.5;
+button2:hover {
+    text-decoration: none !important;
 }
 
-.deleteform:hover{
-opacity: 1;
+.editbutton {
+    background: #F62A71;
+    font-size: 0.7em;
+    border: none;
+    color: white;
+    padding: 5px;
+    transition: 0.3s;
+    font-family: 'Bodoni Moda', serif;
+
+}
+
+.deletebutton {
+    background-color: orangered;
+    font-size: 0.7em;
+    border: none;
+    color: white;
+    padding: 5px;
+    transition: 0.3s;
+    font-family: 'Bodoni Moda', serif;
+}
+
+.deletebutton:hover {
+    padding-right: 40px;
+    background-color: rgb(199, 0, 0);
+}
+
+.deleteform {
+    margin-top: 0px;
+    opacity: 0.5;
+}
+
+.deleteform:hover {
+    opacity: 1;
+}
+
+
+.buttonsrow {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    justify-content: space-between;
+    height: 50px;
+    text-align: left;
+    align-items: stretch;
+}
+
+.buttonsrow>a {
+    font-size: 0.76em;
+
+}
+
+.amountremaining {
+    font-size: 0.6em;
+}
+
+
+
+
+
+
+
+
+
+
+.sunglassshowcontainer {
+    display: flex;
+    max-width: 700px;
+    margin: 0 auto;
+
+}
+
+.sunglassinfo {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    background: rgb(10,68,124);
+    background: linear-gradient(357deg, rgba(10,68,124,0.39257701371564246) 0%, rgba(14,56,96,1) 32%, rgba(17,43,68,1) 58%); 
+}
+
+.orange{
+    background:rgb(255, 103, 57);
+}
+
+.sunglasspicbox {
+    display: inline;
+    width: 300px;
+    max-width: 300px;
+}
+
+.showimage {
+    width: 450px;
 }

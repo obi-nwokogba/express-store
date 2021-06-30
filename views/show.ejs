@@ -2,15 +2,28 @@
 
 <title> Sunglasses Express - The Best Sunglasses Online - Express Delivery </title>
 </head>
+
 <body>
 	<%- include('partials/navigationbar.ejs') %>
 
-	<h2><%=sunglass.model %></h2>
-	<img src="<%=sunglass.imgurl %>">
-	<br />
-	Description: <%= sunglass.description%>
-	<br />
-	Price: $<%= sunglass.price %>
+	<h2><%= foundSunglass.model %></h2>
+
+	<div class="sunglassshowcontainer">
+
+		<div class="sunglassinfo">
+			
+			<span class="model2"><%= foundSunglass.description%></span>
+			<br />
+			<span class="model2">
+			$<%= foundSunglass.price %></span>
+
+			<a href="" class="button2">Buy</a>
+		</div>
+
+		<div class="sunglasspicbox">
+			<img class="showimage" src="<%=foundSunglass.imgurl %>">
+		</div>
+	</div>
 	<%- include('partials/footer.ejs') %>
 </body>
 
